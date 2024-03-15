@@ -1,11 +1,11 @@
 package Exercise1_Inventory_Control_System;
 
-public class clsSpecificProduct extends clsProduct {
+public class SpecificProduct extends Product {
     //Attributes
     private  String category;
     private String brand;
     //Contructor
-    public clsSpecificProduct(String id, String name, double price, String category, String brand) {
+    public SpecificProduct(String id, String name, double price, String category, String brand) {
         super(id, name, price);
         this.category = category;
         this.brand = brand;

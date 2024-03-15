@@ -1,8 +1,5 @@
 package Exercise2_Inventory_Control_System;
 
-import Exercise1_Inventory_Control_System.clsSpecificProduct;
-
-import javax.xml.namespace.QName;
 import java.util.ArrayList;
 
 public class clsEmployeeManagement {
@@ -32,10 +29,12 @@ public class clsEmployeeManagement {
         return null;
     }
 
-    public void listEmployee(){
+    public String listEmployee(){
+        String text = "";
         for(clsEmployee iterable : this.employeeList){
-            System.out.println(iterable.toString());
+            text += iterable.toString();
         }
+        return  text;
     }
 }
 

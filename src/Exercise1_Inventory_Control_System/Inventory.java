@@ -2,17 +2,17 @@ package Exercise1_Inventory_Control_System;
 
 import java.util.ArrayList;
 
-public class clsInventory {
+public class Inventory {
     //Attributes
-    private ArrayList<clsSpecificProduct> productsList;
+    private ArrayList<SpecificProduct> productsList;
 
     //Constructor
-    public clsInventory(){
+    public Inventory(){
         this.productsList = new ArrayList<>();
     }
 
     //Methods
-    public void addProduct (clsSpecificProduct product){
+    public void addProduct (SpecificProduct product){
         this.productsList.add(product);
     }
 
@@ -22,14 +22,14 @@ public class clsInventory {
 
     public String listProduct(){
         String text = "";
-        for(clsSpecificProduct iterable : this.productsList){
+        for(SpecificProduct iterable : this.productsList){
             text += iterable.toString();
         }
         return(text);
     }
 
-    public clsSpecificProduct searchByName(String nameSearch){
-        for(clsSpecificProduct iterable : this.productsList){
+    public SpecificProduct searchByName(String nameSearch){
+        for(SpecificProduct iterable : this.productsList){
             if (iterable.getName().equalsIgnoreCase(nameSearch)){
                 return iterable;
             };
@@ -37,8 +37,8 @@ public class clsInventory {
         return null;
     }
 
-    public clsSpecificProduct searchByCategory(String categorySearch){
-        for(clsSpecificProduct iterable : this.productsList){
+    public SpecificProduct searchByCategory(String categorySearch){
+        for(SpecificProduct iterable : this.productsList){
             if (iterable.getCategory().equalsIgnoreCase(categorySearch)){
                 return iterable;
             };

@@ -19,13 +19,42 @@ public class Main {
 
             switch (option) {
                 case "1":
-                    employeeList.listEmployee();
+                    JOptionPane.showMessageDialog(null, employeeList.listEmployee());
                     break;
                 case "2":
+                    String optionEmployee =JOptionPane.showInputDialog("What type of employee will you add?\n" +
+                            "1. Permanent\n" +
+                            "2. Temporary\n" +
+                            "enter an option");
+
+                    if (optionEmployee.equals("1")){
+                        String name = JOptionPane.showInputDialog("enter employee's name");
+                        int age = Integer.parseInt(JOptionPane.showInputDialog(null, "enter employee's age:"));
+                        String idEmployee = JOptionPane.showInputDialog("enter employee's id:");
+                        float wage = Float.parseFloat(JOptionPane.showInputDialog("enter employee's salary:"));
+                        String typeEmployee = "Permanent";
+                        int yearOld = Integer.parseInt(JOptionPane.showInputDialog(null, "enter employee's age in Company:"));
+                        clsPermanentEmployee objEmployee = new clsPermanentEmployee(name,age,idEmployee,wage,typeEmployee, yearOld);
+                        employeeList.addEmployee(objEmployee);
+                    } else if (optionEmployee.equals("2")) {
+                        String name = JOptionPane.showInputDialog("enter employee's name");
+                        int age = Integer.parseInt(JOptionPane.showInputDialog(null, "enter employee's age:"));
+                        String idEmployee = JOptionPane.showInputDialog("enter employee's id:");
+                        float wage = Float.parseFloat(JOptionPane.showInputDialog("enter employee's salary:"));
+                        String typeEmployee = "Temporary";
+                        String dateContractEnd = JOptionPane.showInputDialog(null, "enter employee's age in Company:");
+                        clsTemporaryEmployee objEmployee = new clsTemporaryEmployee(name,age,idEmployee,wage,typeEmployee, dateContractEnd);
+                        employeeList.addEmployee(objEmployee);
+                    }
                     break;
                 case "3":
+                    employeeList.deleteEmployeeForId("1");
                     break;
                 case "4":
+                    JOptionPane.showMessageDialog(null,"exiting the system","",JOptionPane.INFORMATION_MESSAGE);
+                    break;
+                default:
+
                     break;
             }
         } while (!option.equals("4"));

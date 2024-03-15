@@ -5,7 +5,7 @@ import javax.swing.*;
 public class Main {
     public static void main(String[] args) {
         //Instantiate
-        clsInventory objInventory = new clsInventory();
+        Inventory objInventory = new Inventory();
         String option = "";
         //Menu
        do {
@@ -26,7 +26,7 @@ public class Main {
                    double priceProduct = Double.parseDouble(JOptionPane.showInputDialog("Enter product value"));
                    String categoryProduct = JOptionPane.showInputDialog("Enter product category");
                    String brandProduct = JOptionPane.showInputDialog("Enter product brand name");
-                   clsSpecificProduct objProduct = new clsSpecificProduct(idProduct, nameProduct, priceProduct, categoryProduct,brandProduct);
+                   SpecificProduct objProduct = new SpecificProduct(idProduct, nameProduct, priceProduct, categoryProduct,brandProduct);
                    objInventory.addProduct(objProduct);
 
                    break;
@@ -42,23 +42,5 @@ public class Main {
                    break;
            }
         }while(!option.equals("4"));
-
-
-
-
-
-
-
-        //Remove a product
-/*        System.out.println("before remove products:");
-        objInventory.listProduct();
-
-        System.out.println("after remove products:");
-        objInventory.deleteProducts("1");
-        objInventory.listProduct();*/
-
-
-
-
     }
 }
